@@ -1,0 +1,9 @@
+/target
+/data
+/static/reports
+*.exe
+*.dll
+.DS_Store
+
+# CodeGraph index database
+.codegraph/

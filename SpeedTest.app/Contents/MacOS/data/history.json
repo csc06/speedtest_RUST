@@ -1,0 +1,1076 @@
+[
+  {
+    "id": "20260702225132",
+    "timestamp": "2026-07-02T22:51:32.843841+08:00",
+    "result": {
+      "status": "completed",
+      "start_time": "2026-07-02T22:51:12.387740+08:00",
+      "end_time": "2026-07-02T22:51:32.843556+08:00",
+      "config": {
+        "client_host": "192.168.0.1",
+        "server_host": "192.168.0.2",
+        "server_port": 5201,
+        "duration": 10,
+        "parallel": 4,
+        "protocol": "tcp",
+        "reverse": false,
+        "client_addr": "192.168.0.1"
+      },
+      "command": "iperf3 -c 192.168.0.2 -p 5201 -t 10 -P 4 -i 1 --json -B 192.168.0.1",
+      "iperf3_version": "iperf 3.21 (cJSON 1.7.15)",
+      "intervals": [
+        {
+          "time_start": 0.0,
+          "time_end": 1.00108,
+          "seconds": 1.00108003616333,
+          "bits_per_second": 98459803.8512063,
+          "bytes": 12320768,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 1.00108,
+          "time_end": 2.004999,
+          "seconds": 1.003919005393982,
+          "bits_per_second": 95047922.6783368,
+          "bytes": 11927552,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 2.004999,
+          "time_end": 3.000831,
+          "seconds": 0.9958320260047911,
+          "bits_per_second": 96872755.1242019,
+          "bytes": 12058624,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 3.000831,
+          "time_end": 4.005,
+          "seconds": 1.00416898727417,
+          "bits_per_second": 92935815.7667538,
+          "bytes": 11665408,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 4.005,
+          "time_end": 5.004999,
+          "seconds": 0.9999989867210389,
+          "bits_per_second": 95420512.68759798,
+          "bytes": 11927552,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 5.004999,
+          "time_end": 6.004999,
+          "seconds": 1.0,
+          "bits_per_second": 92274688.0,
+          "bytes": 11534336,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 6.004999,
+          "time_end": 7.004998,
+          "seconds": 0.9999989867210389,
+          "bits_per_second": 94371935.6250969,
+          "bytes": 11796480,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 7.004998,
+          "time_end": 8.005002,
+          "seconds": 1.0000040531158447,
+          "bits_per_second": 94371457.5015503,
+          "bytes": 11796480,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 8.005002,
+          "time_end": 9.005001,
+          "seconds": 0.9999989867210389,
+          "bits_per_second": 94371935.6250969,
+          "bytes": 11796480,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 9.005001,
+          "time_end": 10.004889,
+          "seconds": 0.999888002872467,
+          "bits_per_second": 93333717.1082181,
+          "bytes": 11665408,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        }
+      ],
+      "summary": {
+        "avg_bits_per_second": 94394365.58180535,
+        "max_bits_per_second": 98459803.8512063,
+        "min_bits_per_second": 92274688.0,
+        "avg_mbps": 94.39,
+        "max_mbps": 98.46,
+        "min_mbps": 92.27
+      },
+      "bidirectional": true,
+      "upload": {
+        "status": "completed",
+        "start_time": "2026-07-02T22:51:12.387740+08:00",
+        "end_time": "2026-07-02T22:51:22.505321+08:00",
+        "config": {
+          "client_host": "192.168.0.1",
+          "server_host": "192.168.0.2",
+          "server_port": 5201,
+          "duration": 10,
+          "parallel": 4,
+          "protocol": "tcp",
+          "reverse": false,
+          "client_addr": "192.168.0.1"
+        },
+        "command": "iperf3 -c 192.168.0.2 -p 5201 -t 10 -P 4 -i 1 --json -B 192.168.0.1",
+        "iperf3_version": "iperf 3.21 (cJSON 1.7.15)",
+        "intervals": [
+          {
+            "time_start": 0.0,
+            "time_end": 1.00108,
+            "seconds": 1.00108003616333,
+            "bits_per_second": 98459803.8512063,
+            "bytes": 12320768,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 1.00108,
+            "time_end": 2.004999,
+            "seconds": 1.003919005393982,
+            "bits_per_second": 95047922.6783368,
+            "bytes": 11927552,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 2.004999,
+            "time_end": 3.000831,
+            "seconds": 0.9958320260047911,
+            "bits_per_second": 96872755.1242019,
+            "bytes": 12058624,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 3.000831,
+            "time_end": 4.005,
+            "seconds": 1.00416898727417,
+            "bits_per_second": 92935815.7667538,
+            "bytes": 11665408,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 4.005,
+            "time_end": 5.004999,
+            "seconds": 0.9999989867210389,
+            "bits_per_second": 95420512.68759798,
+            "bytes": 11927552,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 5.004999,
+            "time_end": 6.004999,
+            "seconds": 1.0,
+            "bits_per_second": 92274688.0,
+            "bytes": 11534336,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 6.004999,
+            "time_end": 7.004998,
+            "seconds": 0.9999989867210389,
+            "bits_per_second": 94371935.6250969,
+            "bytes": 11796480,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 7.004998,
+            "time_end": 8.005002,
+            "seconds": 1.0000040531158447,
+            "bits_per_second": 94371457.5015503,
+            "bytes": 11796480,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 8.005002,
+            "time_end": 9.005001,
+            "seconds": 0.9999989867210389,
+            "bits_per_second": 94371935.6250969,
+            "bytes": 11796480,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 9.005001,
+            "time_end": 10.004889,
+            "seconds": 0.999888002872467,
+            "bits_per_second": 93333717.1082181,
+            "bytes": 11665408,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          }
+        ],
+        "summary": {
+          "avg_bits_per_second": 94746054.39680591,
+          "max_bits_per_second": 98459803.8512063,
+          "min_bits_per_second": 92274688.0,
+          "avg_mbps": 94.75,
+          "max_mbps": 98.46,
+          "min_mbps": 92.27
+        },
+        "bidirectional": null,
+        "upload": null,
+        "download": null,
+        "command_down": null,
+        "download_summary": null
+      },
+      "download": {
+        "status": "completed",
+        "start_time": "2026-07-02T22:51:22.505597+08:00",
+        "end_time": "2026-07-02T22:51:32.843556+08:00",
+        "config": {
+          "client_host": "192.168.0.1",
+          "server_host": "192.168.0.2",
+          "server_port": 5201,
+          "duration": 10,
+          "parallel": 4,
+          "protocol": "tcp",
+          "reverse": true,
+          "client_addr": "192.168.0.1"
+        },
+        "command": "iperf3 -c 192.168.0.2 -p 5201 -t 10 -P 4 -i 1 --json -B 192.168.0.1 -R",
+        "iperf3_version": "iperf 3.21 (cJSON 1.7.15)",
+        "intervals": [
+          {
+            "time_start": 0.0,
+            "time_end": 1.00499,
+            "seconds": 1.0049899816513062,
+            "bits_per_second": 92859894.82866275,
+            "bytes": 11665408,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 1.00499,
+            "time_end": 2.001822,
+            "seconds": 0.996832013130188,
+            "bits_per_second": 93619850.45700155,
+            "bytes": 11665408,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 2.001822,
+            "time_end": 3.000041,
+            "seconds": 0.9982190132141113,
+            "bits_per_second": 93489768.0414977,
+            "bytes": 11665408,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 3.000041,
+            "time_end": 4.004929,
+            "seconds": 1.00488805770874,
+            "bits_per_second": 93912788.8684224,
+            "bytes": 11796480,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 4.004929,
+            "time_end": 5.004993,
+            "seconds": 1.0000640153884888,
+            "bits_per_second": 95414308.01600496,
+            "bytes": 11927552,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 5.004993,
+            "time_end": 6.004991,
+            "seconds": 0.9999979734420776,
+            "bits_per_second": 93323453.12538327,
+            "bytes": 11665408,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 6.004991,
+            "time_end": 7.003027,
+            "seconds": 0.998036026954651,
+            "bits_per_second": 94557548.47644201,
+            "bytes": 11796480,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 7.003027,
+            "time_end": 8.00474,
+            "seconds": 1.0017130374908447,
+            "bits_per_second": 93163671.13855493,
+            "bytes": 11665408,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 8.00474,
+            "time_end": 9.001356,
+            "seconds": 0.996616005897522,
+            "bits_per_second": 96796550.95758067,
+            "bytes": 12058624,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 9.001356,
+            "time_end": 10.001724,
+            "seconds": 1.0003679990768433,
+            "bits_per_second": 93288933.7584972,
+            "bytes": 11665408,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          }
+        ],
+        "summary": {
+          "avg_bits_per_second": 94042676.76680475,
+          "max_bits_per_second": 96796550.95758067,
+          "min_bits_per_second": 92859894.82866275,
+          "avg_mbps": 94.04,
+          "max_mbps": 96.8,
+          "min_mbps": 92.86
+        },
+        "bidirectional": null,
+        "upload": null,
+        "download": null,
+        "command_down": null,
+        "download_summary": null
+      },
+      "command_down": "iperf3 -c 192.168.0.2 -p 5201 -t 10 -P 4 -i 1 --json -B 192.168.0.1 -R",
+      "download_summary": {
+        "avg_bits_per_second": 94042676.76680475,
+        "max_bits_per_second": 96796550.95758067,
+        "min_bits_per_second": 92859894.82866275,
+        "avg_mbps": 94.04,
+        "max_mbps": 96.8,
+        "min_mbps": 92.86
+      }
+    }
+  },
+  {
+    "id": "20260702224755",
+    "timestamp": "2026-07-02T22:47:55.524640+08:00",
+    "result": {
+      "status": "completed",
+      "start_time": "2026-07-02T22:47:35.035934+08:00",
+      "end_time": "2026-07-02T22:47:55.524387+08:00",
+      "config": {
+        "client_host": "192.168.0.1",
+        "server_host": "192.168.0.2",
+        "server_port": 5201,
+        "duration": 10,
+        "parallel": 4,
+        "protocol": "tcp",
+        "reverse": false,
+        "client_addr": "192.168.0.1"
+      },
+      "command": "iperf3 -c 192.168.0.2 -p 5201 -t 10 -P 4 -i 1 --json -B 192.168.0.1",
+      "iperf3_version": "iperf 3.21 (cJSON 1.7.15)",
+      "intervals": [
+        {
+          "time_start": 0.0,
+          "time_end": 1.002137,
+          "seconds": 1.0021369457244873,
+          "bits_per_second": 99402302.67429598,
+          "bytes": 12451840,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 1.002137,
+          "time_end": 2.003622,
+          "seconds": 1.001484990119934,
+          "bits_per_second": 94231906.549791,
+          "bytes": 11796480,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 2.003622,
+          "time_end": 3.00498,
+          "seconds": 1.0013580322265625,
+          "bits_per_second": 95291007.74058668,
+          "bytes": 11927552,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 3.00498,
+          "time_end": 4.004618,
+          "seconds": 0.999638020992279,
+          "bits_per_second": 94406012.9949068,
+          "bytes": 11796480,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 4.004618,
+          "time_end": 5.004577,
+          "seconds": 0.9999589920043944,
+          "bits_per_second": 93327091.15694404,
+          "bytes": 11665408,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 5.004577,
+          "time_end": 6.004977,
+          "seconds": 1.0003999471664429,
+          "bits_per_second": 94334111.3394709,
+          "bytes": 11796480,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 6.004977,
+          "time_end": 7.002939,
+          "seconds": 0.99796199798584,
+          "bits_per_second": 94564562.7693922,
+          "bytes": 11796480,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 7.002939,
+          "time_end": 8.004461,
+          "seconds": 1.0015219449996948,
+          "bits_per_second": 94228429.5128738,
+          "bytes": 11796480,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 8.004461,
+          "time_end": 9.004428,
+          "seconds": 0.9999669790267944,
+          "bits_per_second": 94374956.352905,
+          "bytes": 11796480,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 9.004428,
+          "time_end": 10.005204,
+          "seconds": 1.0007760524749756,
+          "bits_per_second": 94298659.2920695,
+          "bytes": 11796480,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        }
+      ],
+      "summary": {
+        "avg_bits_per_second": 94481086.93296084,
+        "max_bits_per_second": 99402302.67429598,
+        "min_bits_per_second": 91371393.7499443,
+        "avg_mbps": 94.48,
+        "max_mbps": 99.4,
+        "min_mbps": 91.37
+      },
+      "bidirectional": true,
+      "upload": {
+        "status": "completed",
+        "start_time": "2026-07-02T22:47:35.035934+08:00",
+        "end_time": "2026-07-02T22:47:45.159643+08:00",
+        "config": {
+          "client_host": "192.168.0.1",
+          "server_host": "192.168.0.2",
+          "server_port": 5201,
+          "duration": 10,
+          "parallel": 4,
+          "protocol": "tcp",
+          "reverse": false,
+          "client_addr": "192.168.0.1"
+        },
+        "command": "iperf3 -c 192.168.0.2 -p 5201 -t 10 -P 4 -i 1 --json -B 192.168.0.1",
+        "iperf3_version": "iperf 3.21 (cJSON 1.7.15)",
+        "intervals": [
+          {
+            "time_start": 0.0,
+            "time_end": 1.002137,
+            "seconds": 1.0021369457244873,
+            "bits_per_second": 99402302.67429598,
+            "bytes": 12451840,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 1.002137,
+            "time_end": 2.003622,
+            "seconds": 1.001484990119934,
+            "bits_per_second": 94231906.549791,
+            "bytes": 11796480,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 2.003622,
+            "time_end": 3.00498,
+            "seconds": 1.0013580322265625,
+            "bits_per_second": 95291007.74058668,
+            "bytes": 11927552,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 3.00498,
+            "time_end": 4.004618,
+            "seconds": 0.999638020992279,
+            "bits_per_second": 94406012.9949068,
+            "bytes": 11796480,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 4.004618,
+            "time_end": 5.004577,
+            "seconds": 0.9999589920043944,
+            "bits_per_second": 93327091.15694404,
+            "bytes": 11665408,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 5.004577,
+            "time_end": 6.004977,
+            "seconds": 1.0003999471664429,
+            "bits_per_second": 94334111.3394709,
+            "bytes": 11796480,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 6.004977,
+            "time_end": 7.002939,
+            "seconds": 0.99796199798584,
+            "bits_per_second": 94564562.7693922,
+            "bytes": 11796480,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 7.002939,
+            "time_end": 8.004461,
+            "seconds": 1.0015219449996948,
+            "bits_per_second": 94228429.5128738,
+            "bytes": 11796480,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 8.004461,
+            "time_end": 9.004428,
+            "seconds": 0.9999669790267944,
+            "bits_per_second": 94374956.352905,
+            "bytes": 11796480,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 9.004428,
+            "time_end": 10.005204,
+            "seconds": 1.0007760524749756,
+            "bits_per_second": 94298659.2920695,
+            "bytes": 11796480,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          }
+        ],
+        "summary": {
+          "avg_bits_per_second": 94845904.0383236,
+          "max_bits_per_second": 99402302.67429598,
+          "min_bits_per_second": 93327091.15694404,
+          "avg_mbps": 94.85,
+          "max_mbps": 99.4,
+          "min_mbps": 93.33
+        },
+        "bidirectional": null,
+        "upload": null,
+        "download": null,
+        "command_down": null,
+        "download_summary": null
+      },
+      "download": {
+        "status": "completed",
+        "start_time": "2026-07-02T22:47:45.159908+08:00",
+        "end_time": "2026-07-02T22:47:55.524387+08:00",
+        "config": {
+          "client_host": "192.168.0.1",
+          "server_host": "192.168.0.2",
+          "server_port": 5201,
+          "duration": 10,
+          "parallel": 4,
+          "protocol": "tcp",
+          "reverse": true,
+          "client_addr": "192.168.0.1"
+        },
+        "command": "iperf3 -c 192.168.0.2 -p 5201 -t 10 -P 4 -i 1 --json -B 192.168.0.1 -R",
+        "iperf3_version": "iperf 3.21 (cJSON 1.7.15)",
+        "intervals": [
+          {
+            "time_start": 0.0,
+            "time_end": 1.00302,
+            "seconds": 1.0030200481414795,
+            "bits_per_second": 91996853.07484934,
+            "bytes": 11534336,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 1.00302,
+            "time_end": 2.000877,
+            "seconds": 0.9978569746017456,
+            "bits_per_second": 93523687.63794652,
+            "bytes": 11665408,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 2.000877,
+            "time_end": 3.00095,
+            "seconds": 1.0000729560852053,
+            "bits_per_second": 95413455.00784674,
+            "bytes": 11927552,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 3.00095,
+            "time_end": 4.004139,
+            "seconds": 1.0031889677047727,
+            "bits_per_second": 93026605.16045864,
+            "bytes": 11665408,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 4.004139,
+            "time_end": 5.004834,
+            "seconds": 1.0006949901580813,
+            "bits_per_second": 96401993.56325416,
+            "bytes": 12058624,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 5.004834,
+            "time_end": 6.003244,
+            "seconds": 0.9984099864959716,
+            "bits_per_second": 91371393.7499443,
+            "bytes": 11403264,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 6.003244,
+            "time_end": 7.001155,
+            "seconds": 0.997910976409912,
+            "bits_per_second": 96670939.8738725,
+            "bytes": 12058624,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 7.001155,
+            "time_end": 8.004986,
+            "seconds": 1.0038310289382937,
+            "bits_per_second": 92967104.33299096,
+            "bytes": 11665408,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 8.004986,
+            "time_end": 9.001346,
+            "seconds": 0.9963600039482116,
+            "bits_per_second": 94716608.07944795,
+            "bytes": 11796480,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 9.001346,
+            "time_end": 10.004989,
+            "seconds": 1.003643035888672,
+            "bits_per_second": 95074057.7953698,
+            "bytes": 11927552,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          }
+        ],
+        "summary": {
+          "avg_bits_per_second": 94116269.8275981,
+          "max_bits_per_second": 96670939.8738725,
+          "min_bits_per_second": 91371393.7499443,
+          "avg_mbps": 94.12,
+          "max_mbps": 96.67,
+          "min_mbps": 91.37
+        },
+        "bidirectional": null,
+        "upload": null,
+        "download": null,
+        "command_down": null,
+        "download_summary": null
+      },
+      "command_down": "iperf3 -c 192.168.0.2 -p 5201 -t 10 -P 4 -i 1 --json -B 192.168.0.1 -R",
+      "download_summary": {
+        "avg_bits_per_second": 94116269.8275981,
+        "max_bits_per_second": 96670939.8738725,
+        "min_bits_per_second": 91371393.7499443,
+        "avg_mbps": 94.12,
+        "max_mbps": 96.67,
+        "min_mbps": 91.37
+      }
+    }
+  },
+  {
+    "id": "20260702224641",
+    "timestamp": "2026-07-02T22:46:41.077025+08:00",
+    "result": {
+      "status": "completed",
+      "start_time": "2026-07-02T22:46:34.759513+08:00",
+      "end_time": "2026-07-02T22:46:41.076909+08:00",
+      "config": {
+        "client_host": "127.0.0.1",
+        "server_host": "192.168.0.2",
+        "server_port": 5201,
+        "duration": 3,
+        "parallel": 2,
+        "protocol": "tcp",
+        "reverse": false,
+        "client_addr": null
+      },
+      "command": "iperf3 -c 192.168.0.2 -p 5201 -t 3 -P 2 -i 1 --json",
+      "iperf3_version": "iperf 3.21 (cJSON 1.7.15)",
+      "intervals": [
+        {
+          "time_start": 0.0,
+          "time_end": 1.000972,
+          "seconds": 1.0009720325469973,
+          "bits_per_second": 99517985.27929696,
+          "bytes": 12451840,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 1.000972,
+          "time_end": 2.001921,
+          "seconds": 1.0009490251541138,
+          "bits_per_second": 95329945.4837956,
+          "bytes": 11927552,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        },
+        {
+          "time_start": 2.001921,
+          "time_end": 3.002541,
+          "seconds": 1.0006200075149536,
+          "bits_per_second": 95361291.282769,
+          "bytes": 11927552,
+          "retransmits": 0,
+          "lost_packets": 0,
+          "lost_percent": 0.0,
+          "jitter_ms": 0.0
+        }
+      ],
+      "summary": {
+        "avg_bits_per_second": 95301933.4042974,
+        "max_bits_per_second": 99517985.27929696,
+        "min_bits_per_second": 92876717.4729577,
+        "avg_mbps": 95.3,
+        "max_mbps": 99.52,
+        "min_mbps": 92.88
+      },
+      "bidirectional": true,
+      "upload": {
+        "status": "completed",
+        "start_time": "2026-07-02T22:46:34.759513+08:00",
+        "end_time": "2026-07-02T22:46:37.866855+08:00",
+        "config": {
+          "client_host": "127.0.0.1",
+          "server_host": "192.168.0.2",
+          "server_port": 5201,
+          "duration": 3,
+          "parallel": 2,
+          "protocol": "tcp",
+          "reverse": false,
+          "client_addr": null
+        },
+        "command": "iperf3 -c 192.168.0.2 -p 5201 -t 3 -P 2 -i 1 --json",
+        "iperf3_version": "iperf 3.21 (cJSON 1.7.15)",
+        "intervals": [
+          {
+            "time_start": 0.0,
+            "time_end": 1.000972,
+            "seconds": 1.0009720325469973,
+            "bits_per_second": 99517985.27929696,
+            "bytes": 12451840,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 1.000972,
+            "time_end": 2.001921,
+            "seconds": 1.0009490251541138,
+            "bits_per_second": 95329945.4837956,
+            "bytes": 11927552,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 2.001921,
+            "time_end": 3.002541,
+            "seconds": 1.0006200075149536,
+            "bits_per_second": 95361291.282769,
+            "bytes": 11927552,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          }
+        ],
+        "summary": {
+          "avg_bits_per_second": 96736407.34862052,
+          "max_bits_per_second": 99517985.27929696,
+          "min_bits_per_second": 95329945.4837956,
+          "avg_mbps": 96.74,
+          "max_mbps": 99.52,
+          "min_mbps": 95.33
+        },
+        "bidirectional": null,
+        "upload": null,
+        "download": null,
+        "command_down": null,
+        "download_summary": null
+      },
+      "download": {
+        "status": "completed",
+        "start_time": "2026-07-02T22:46:37.874735+08:00",
+        "end_time": "2026-07-02T22:46:41.076909+08:00",
+        "config": {
+          "client_host": "127.0.0.1",
+          "server_host": "192.168.0.2",
+          "server_port": 5201,
+          "duration": 3,
+          "parallel": 2,
+          "protocol": "tcp",
+          "reverse": true,
+          "client_addr": null
+        },
+        "command": "iperf3 -c 192.168.0.2 -p 5201 -t 3 -P 2 -i 1 --json -R",
+        "iperf3_version": "iperf 3.21 (cJSON 1.7.15)",
+        "intervals": [
+          {
+            "time_start": 0.0,
+            "time_end": 1.004808,
+            "seconds": 1.004807949066162,
+            "bits_per_second": 92876717.4729577,
+            "bytes": 11665408,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 1.004808,
+            "time_end": 2.004809,
+            "seconds": 1.0000009536743164,
+            "bits_per_second": 94371750.00008585,
+            "bytes": 11796480,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          },
+          {
+            "time_start": 2.004809,
+            "time_end": 3.004999,
+            "seconds": 1.000190019607544,
+            "bits_per_second": 94353910.90687925,
+            "bytes": 11796480,
+            "retransmits": 0,
+            "lost_packets": 0,
+            "lost_percent": 0.0,
+            "jitter_ms": 0.0
+          }
+        ],
+        "summary": {
+          "avg_bits_per_second": 93867459.45997424,
+          "max_bits_per_second": 94371750.00008585,
+          "min_bits_per_second": 92876717.4729577,
+          "avg_mbps": 93.87,
+          "max_mbps": 94.37,
+          "min_mbps": 92.88
+        },
+        "bidirectional": null,
+        "upload": null,
+        "download": null,
+        "command_down": null,
+        "download_summary": null
+      },
+      "command_down": "iperf3 -c 192.168.0.2 -p 5201 -t 3 -P 2 -i 1 --json -R",
+      "download_summary": {
+        "avg_bits_per_second": 93867459.45997424,
+        "max_bits_per_second": 94371750.00008585,
+        "min_bits_per_second": 92876717.4729577,
+        "avg_mbps": 93.87,
+        "max_mbps": 94.37,
+        "min_mbps": 92.88
+      }
+    }
+  }
+]

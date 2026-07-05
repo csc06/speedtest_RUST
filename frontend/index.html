@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpeedTest - 网络链路速度测试</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="lib/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- 顶部导航 -->
+        <header class="app-header">
+            <div>
+                <h1>🚀 SpeedTest 网络链路速度测试</h1>
+                <div class="subtitle">基于 iperf3 的局域网链路质量检测工具 · Rust 重写版</div>
+            </div>
+            <div class="header-right">
+                <button class="theme-toggle" id="themeToggle" title="切换颜色主题">🌙</button>
+                <span class="system-badge" id="systemBadge">🍎 macOS</span>
+            </div>
+        </header>
+
+        <!-- 违规外联风险弹窗 -->
+        <div class="modal-overlay" id="riskModal">
+            <div class="modal">
+                <h3>⚠️ 违规外联风险确认</h3>
+                <p>
+                    <strong>安全提醒：</strong>当前检测到无线网卡处于开启状态。<br><br>
+                    在禁止连接互联网的环境下进行测试，请确认您已断开所有外网连接，
+                    或选择禁用无线网卡以确保安全。<br><br>
+                    请选择以下操作：
+                </p>
+                <div class="modal-actions" style="flex-direction:column;gap:10px;">
+                    <button class="btn btn-success btn-lg" id="btnSafeNoDisable" style="width:100%;justify-content:center;">
+                        ✅ 确认安全，已断开外联，无需禁用
+                    </button>
+                    <button class="btn btn-danger btn-lg" id="btnDisableWifiRisk" style="width:100%;justify-content:center;">
+                        🔒 禁用无线网卡
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast 通知容器 -->
+        <div class="toast-container" id="toastContainer"></div>
+
+        <!-- 连接状态 -->
+        <div class="card">
+            <div class="card-header">
+                <h2>🔌 连接状态</h2>
+                <span class="badge" id="connStateBadge">实时检测</span>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:8px;background:#f0fdf4;border:1px solid #bbf7d0;" id="clientStatusBox">
+                    <span style="font-size:24px;">🖥️</span>
+                    <div style="flex:1;">
+                        <div style="font-weight:600;font-size:14px;">本地客户端</div>
+                        <div style="font-size:12px;color:var(--text-secondary);" id="clientStatusText">检测中...</div>
+                    </div>
+                    <span style="font-size:20px;" id="clientIcon">⏳</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:8px;background:#fef2f2;border:1px solid #fecaca;" id="serverStatusBox">
+                    <span style="font-size:24px;">☁️</span>
+                    <div style="flex:1;">
+                        <div style="font-weight:600;font-size:14px;">远程服务端</div>
+                        <div style="font-size:12px;color:var(--text-secondary);" id="serverStatusText">检测中...</div>
+                    </div>
+                    <span style="font-size:20px;" id="serverIcon">⏳</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wi-Fi 状态 -->
+        <div class="card">
+            <div class="card-header">
+                <h2>📡 无线网卡状态</h2>
+                <span class="badge" id="wifiStateBadge">实时监控</span>
+            </div>
+            <div id="wifiStatus" class="wifi-status wifi-off">
+                <div class="wifi-icon">📡</div>
+                <div class="wifi-info">
+                    <div class="status-label">正在检测...</div>
+                    <div class="status-detail">请稍候</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主内容区：两列布局 -->
+        <div class="row">
+            <!-- 左列：测试配置 -->
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>⚙️ 测试配置</h2>
+                    </div>
+                    <div class="test-config-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="serverHost">服务端地址</label>
+                                <input type="text" id="serverHost" value="127.0.0.1" placeholder="IP 地址">
+                            </div>
+                            <div class="form-group">
+                                <label for="serverPort">服务端端口</label>
+                                <input type="number" id="serverPort" value="5201" min="1024" max="65535">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="clientAddr">客户端绑定地址 <span style="font-weight:400;color:#888;font-size:11px;">（多网卡时指定，留空自动检测）</span></label>
+                                <div style="display:flex;gap:8px;">
+                                    <input type="text" id="clientAddr" value="" placeholder="如 192.168.1.100" style="flex:1;">
+                                    <button class="btn btn-outline btn-sm" id="btnSetClientAddr" style="white-space:nowrap;">保存</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="testDuration">测试时长 (秒)</label>
+                                <input type="number" id="testDuration" value="10" min="5" max="300">
+                            </div>
+                            <div class="form-group">
+                                <label for="parallelStreams">并行流数</label>
+                                <input type="number" id="parallelStreams" value="4" min="1" max="64">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="protocol">测试协议</label>
+                                <select id="protocol">
+                                    <option value="tcp">TCP</option>
+                                    <option value="udp">UDP</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="testDirection">测试方向</label>
+                                <select id="testDirection">
+                                    <option value="upload">上传 (客户端→服务端)</option>
+                                    <option value="download">下载 (服务端→客户端)</option>
+                                    <option value="bidirectional" selected>🔄 上下行（先上传后下载）</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:flex;gap:10px;margin-top:8px;">
+                        <button class="btn btn-primary btn-lg" id="btnStartTest" style="flex:1;justify-content:center;">
+                            ▶️ 开始测试
+                        </button>
+                        <button class="btn btn-danger btn-lg" id="btnStopTest" style="display:none;flex:1;justify-content:center;">
+                            ⏹️ 停止测试
+                        </button>
+                    </div>
+                    <!-- 进度条 -->
+                    <div id="testProgress" style="display:none;margin-top:8px;">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill" style="width:0%"></div>
+                        </div>
+                        <div style="text-align:center;font-size:12px;color:var(--text-secondary);">
+                            剩余时间 <span id="countdown">--</span> 秒
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 实时统计 -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2>📊 历史统计</h2>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-label">总测试次数</div>
+                            <div class="stat-value" id="statTotalTests">0</div>
+                        </div>
+                        <div class="stat-card stat-good">
+                            <div class="stat-label">平均带宽</div>
+                            <div class="stat-value" id="statAvgSpeed">0.00 <span class="stat-unit">Mbps</span></div>
+                        </div>
+                        <div class="stat-card stat-good">
+                            <div class="stat-label">最高带宽</div>
+                            <div class="stat-value" id="statMaxSpeed">0.00 <span class="stat-unit">Mbps</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 测试结果 -->
+        <div class="card" id="testResult" style="display:none;">
+            <div class="card-header">
+                <h2>📋 测试结果</h2>
+                <div style="display:flex;gap:8px;">
+                    <button class="btn btn-primary btn-sm" id="btnGenerateReport">📄 生成报告</button>
+                </div>
+            </div>
+            <div class="stats-grid" id="resultStats" style="margin-bottom:16px;">
+                <div class="stat-card stat-good">
+                    <div class="stat-label">平均带宽</div>
+                    <div class="stat-value" id="resultAvgSpeed">0.00 <span class="stat-unit">Mbps</span></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">最高带宽</div>
+                    <div class="stat-value" id="resultMaxSpeed">0.00 <span class="stat-unit">Mbps</span></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">最低带宽</div>
+                    <div class="stat-value" id="resultMinSpeed">0.00 <span class="stat-unit">Mbps</span></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">测试时长</div>
+                    <div class="stat-value" id="resultDuration">0 <span class="stat-unit">秒</span></div>
+                </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;font-size:13px;color:var(--text-secondary);">
+                <div><strong>状态：</strong><span id="resultStatus">-</span></div>
+                <div><strong>协议：</strong><span id="resultProtocol">-</span></div>
+                <div><strong>方向：</strong><span id="resultDirection">-</span></div>
+                <div><strong>服务端：</strong><span id="resultServer">-</span></div>
+            </div>
+        </div>
+
+        <!-- 历史记录 -->
+        <div class="card">
+            <div class="card-header">
+                <h2>📜 测试历史</h2>
+                <button class="btn btn-outline btn-sm" id="btnClearHistory">🗑️ 清空</button>
+            </div>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th style="width:40px;">#</th>
+                        <th>时间</th>
+                        <th>客户端</th>
+                        <th>服务端</th>
+                        <th>平均带宽</th>
+                        <th>最高带宽</th>
+                        <th>协议</th>
+                        <th style="width:180px;">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="historyBody">
+                    <tr>
+                        <td colspan="6">
+                            <div class="empty-state">
+                                <div class="empty-icon">📋</div>
+                                <p>暂无测试记录</p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 底部信息 -->
+        <div style="text-align:center;padding:20px;color:var(--text-secondary);font-size:12px;">
+            <p>SpeedTest 网络链路速度测试工具 · 基于 iperf3 · Rust 重写版</p>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
