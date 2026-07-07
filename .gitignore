@@ -3,6 +3,8 @@
 /static/reports
 *.exe
 *.dll
+!bin/*.exe
+!bin/*.dll
 .DS_Store
 
 # CodeGraph index database
